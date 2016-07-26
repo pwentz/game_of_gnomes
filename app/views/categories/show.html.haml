@@ -1,0 +1,5 @@
+%h3
+  = @category.name
+  Category Show Page
+- @category.gnomes.each do |gnome|
+  %h5= gnome.name
