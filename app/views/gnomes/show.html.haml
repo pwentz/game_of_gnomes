@@ -1,0 +1,6 @@
+%h5= @gnome.name
+%h6= @gnome.price
+
+%p= @gnome.desc
+
+= button_to 'Add to bucket', bucket_gnomes_path(:gnome_id => @gnome.id) 
