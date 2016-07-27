@@ -5,4 +5,5 @@ Rails.application.routes.draw do
 
   resources :categories, only: [:show]
   resources :bucket_gnomes, only: [:create]
+  resources :bucket, only: [:show]
 end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160726190548) do
+ActiveRecord::Schema.define(version: 20160727125007) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 20160726190548) do
     t.decimal "price"
     t.text    "desc"
     t.integer "category_id"
+    t.string  "image_url"
   end
 
   add_index "gnomes", ["category_id"], name: "index_gnomes_on_category_id", using: :btree

@@ -1,0 +1,9 @@
+%h5 Your Bucket
+%ul
+  - @bucket.populated_contents.each do | gnome, quantity |
+    = image_tag(gnome.image_url)
+    %li= gnome.name
+    %p= gnome.price
+    %p= gnome.desc
+    %p Quantity: #{quantity}
+%p Total price: $#{@bucket.total}
