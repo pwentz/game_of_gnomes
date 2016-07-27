@@ -15,5 +15,6 @@ describe 'Visitor can create an account', :type => :feature do
     expect(page).to have_content("Welcome, Alan")
     expect(page).to have_link("Logout")
     expect(page).not_to have_link("Login")
+    expect(page).to have_content("Logged in as Alan.")
   end
 end
