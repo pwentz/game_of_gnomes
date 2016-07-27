@@ -13,7 +13,6 @@ require 'rails_helper'
 describe "User can remove item from cart", :type => :feature do
   context "user has one of each item and removes 1" do
     scenario "and user sees cart with item removed" do
-      pending
 
       gnome, gnome_two, gnome_three = create_list(:gnome, 3)
 
