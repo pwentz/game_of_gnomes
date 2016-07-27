@@ -5,5 +5,8 @@ Rails.application.routes.draw do
 
   resources :categories, only: [:show]
   resources :bucket_gnomes, only: [:create]
-  resources :bucket, only: [:show]
+  #resources :bucket, only: [:show, :update]
+
+  get '/bucket' => "bucket#show"
+  put '/bucket' => "bucket#update"
 end
