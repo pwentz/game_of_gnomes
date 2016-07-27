@@ -6,8 +6,8 @@ class Bucket
   end
 
   def add_gnome(gnome)
-    contents[gnome.id] ||= 0
-    contents[gnome.id] += 1
+    contents[gnome.id.to_s] ||= 0
+    contents[gnome.id.to_s] += 1
   end
 
   def populated_contents
@@ -18,5 +18,14 @@ class Bucket
 
   def total
     populated_contents.keys.sum { |gnome| gnome.price.to_f }
+  end
+
+  def reduce_gnome_quantity(gnome_id)
+    contents[gnome_id] -= 1
+    contents.delete(gnome_id) if contents[gnome_id].zero?
+  end
+
+  def find_gnome_link(gnome_id)
+    require "pry"; binding.pry
   end
 end

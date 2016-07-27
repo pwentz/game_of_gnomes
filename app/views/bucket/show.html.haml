@@ -1,9 +1,18 @@
+- flash.each do | type, message |
+  - if type == "success"
+    = content_tag :div, sanitize(message), :class => "flash_#{type}", :style => "color: green;"
+  - else
+    = content_tag :div, sanitize(message), :class => "flash_#{type}"
+
+
 %h5 Your Bucket
 %ul
   - @bucket.populated_contents.each do | gnome, quantity |
-    = image_tag(gnome.image_url)
-    %li= gnome.name
-    %p= gnome.price
-    %p= gnome.desc
-    %p Quantity: #{quantity}
+    %div{:id => "gnome_#{gnome.id}"}
+      = image_tag(gnome.image_url)
+      %li= gnome.name
+      %p= (gnome.price * 100).round / 100.0
+      %p= gnome.desc
+      %p Quantity: #{quantity}
+      = link_to "Remove from cart", bucket_path(gnome.id), method: :put
 %p Total price: $#{@bucket.total}
