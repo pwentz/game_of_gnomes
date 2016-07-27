@@ -1,0 +1,10 @@
+%h5 Login
+
+= form_for :session do |f|
+  = f.label :username
+  = f.text_field :username
+  = f.label :password
+  = f.password_field :password
+  = f.submit "Login"
+
+  = link_to "Create Account", new_user_path

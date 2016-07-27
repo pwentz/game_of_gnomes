@@ -7,6 +7,14 @@ Rails.application.routes.draw do
   resources :bucket_gnomes, only: [:create]
   #resources :bucket, only: [:show, :update]
 
+  resources :users, only: [:new, :show, :create]
+
   get '/bucket' => "bucket#show"
   put '/bucket' => "bucket#update"
+
+  get '/login', to: 'sessions#index'
+  post '/login', to: 'sessions#create'
+  delete '/logout', to: 'sessions#destroy'
+
+  get '/dashboard', to: 'users#show'
 end

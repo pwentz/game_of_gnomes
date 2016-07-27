@@ -14,7 +14,8 @@ describe "User can remove item from cart", :type => :feature do
   context "user has 3 items in cart and removes 1" do
     scenario "and user sees cart with item removed" do
 
-      gnome, gnome_two, gnome_three = create_list(:gnome, 3)
+      gnome = create(:gnome)
+      create_list(:gnome, 2)
 
       visit gnome_path(gnome)
 
@@ -57,10 +58,9 @@ describe "User can remove item from cart", :type => :feature do
       within("ul") do
         expect(page).not_to have_content(gnome.name)
       end
-      require "pry"; binding.pry
+
       within(".flash_success") do
         expect(page).to have_link(gnome.name)
-        expect(page).to have_css("color: green;")
       end
     end
   end
