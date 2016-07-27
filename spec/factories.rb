@@ -1,4 +1,8 @@
 FactoryGirl.define do
+  factory :user do
+    username "MyString"
+    password_digest "MyString"
+  end
 
   factory :gnome do
     name { Faker::GameOfThrones.character }

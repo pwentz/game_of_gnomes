@@ -11,7 +11,6 @@ require 'rails_helper'
 # And I should not see the item listed in cart
 
 describe "User can remove item from cart", :type => :feature do
-
   context "user has one of each item and removes 1" do
     scenario "and user sees cart with item removed" do
       pending
@@ -39,7 +38,6 @@ describe "User can remove item from cart", :type => :feature do
 
       within(".flash_success") do
         expect(page).to have_link(gnome.name)
-        expect(page).to have_css("color: green;")
       end
     end
   end

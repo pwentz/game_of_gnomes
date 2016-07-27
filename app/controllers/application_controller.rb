@@ -8,4 +8,10 @@ class ApplicationController < ActionController::Base
   def set_bucket
     @bucket = Bucket.new(session[:bucket])
   end
+
+  helper_method :current_user
+
+  def current_user
+    @user ||= User.find(session[:user_id]) if session[:user_id]
+  end
 end
