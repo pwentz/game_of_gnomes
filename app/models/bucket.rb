@@ -17,7 +17,23 @@ class Bucket
   end
 
   def total
-    populated_contents.keys.sum { |gnome| gnome.price.to_f }
+    populated_contents.sum { |gnome, quantity| gnome.price.to_f * quantity }
+  end
+
+  def subtotal(gnome_subtotal)
+    gnome_subtotal[:gnome].price * gnome_subtotal[:quantity]
+  end
+
+  def adjust_gnome_quantity(increase, gnome_id)
+    if increase == "true"
+      increase_gnome_quantity(gnome_id)
+    else
+      reduce_gnome_quantity(gnome_id)
+    end
+  end
+
+  def increase_gnome_quantity(gnome_id)
+    contents[gnome_id] += 1
   end
 
   def reduce_gnome_quantity(gnome_id)
@@ -25,7 +41,4 @@ class Bucket
     contents.delete(gnome_id) if contents[gnome_id].zero?
   end
 
-  def find_gnome_link(gnome_id)
-    require "pry"; binding.pry
-  end
 end
