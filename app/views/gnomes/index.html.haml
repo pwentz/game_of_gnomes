@@ -1,6 +1,9 @@
 %h5 Game of Gnomes
-= link_to "View bucket", bucket_path(@bucket)
-= link_to "Login", login_path
+= link_to "View bucket", bucket_path
+- if current_user
+  = link_to "Logout", logout_path, method: :delete
+- else
+  = link_to "Login", login_path
 
 %ul
   - Gnome.all.each do |gnome|

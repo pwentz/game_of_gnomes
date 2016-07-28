@@ -1,11 +1,11 @@
 FactoryGirl.define do
   factory :user do
-    username "MyString"
-    password_digest "MyString"
+    username { Faker::Internet.user_name }
+    password "MyString"
   end
 
   factory :gnome do
-    name { Faker::GameOfThrones.character }
+    name { Faker::Name.first_name }
     price { Faker::Commerce.price }
     desc { Faker::Lorem.sentence }
     image_url { Faker::Placeholdit.image }
@@ -13,6 +13,6 @@ FactoryGirl.define do
   end
 
   factory :category do
-    name { Faker::Commerce.color.capitalize }
+    name { Faker::Lorem.word }
   end
 end
