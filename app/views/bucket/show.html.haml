@@ -1,10 +1,3 @@
-- flash.each do | type, message |
-  - if type == "success"
-    = content_tag :div, sanitize(message), :class => "flash_#{type}", :style => "color: green;"
-  - else
-    = content_tag :div, sanitize(message), :class => "flash_#{type}"
-
-
 %h5 Your Bucket
 .gnome_bucket
   - @bucket.populated_contents.each do | gnome, quantity |

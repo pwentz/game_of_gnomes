@@ -8,12 +8,11 @@
           .row-fluid.user-row
             %img.img-responsive{:alt => "Gnome", :src => "..."}/
         .panel-body
-          %form.form-signin{"accept-charset" => "UTF-8", :role => "form"}
+        %fieldset
+          %label.panel-login
+            .login_result
             = form_for(@user) do |f|
-              %fieldset
-                %label.panel-login
-                  .login_result
-                = f.text_field :username, :class => "form-control", :placeholder => "Username"
-                = f.text_field :password, :class => "form-control", :placeholder => "Password"
-                %br/
-                = f.submit "Create Account", :class => "btn btn-success btn-lg btn-block"
+              = f.text_field :username, :class => "form-control", :placeholder => "Username"
+              = f.password_field :password, :class => "form-control", :placeholder => "Password"
+              %br/
+              = f.submit "Create Account", :class => "btn btn-success btn-lg btn-block"
