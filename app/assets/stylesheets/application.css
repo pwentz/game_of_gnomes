@@ -13,3 +13,71 @@
  *= require_tree .
  *= require_self
  */
+
+ body{
+       background-image: url('http://www.publicdomainpictures.net/pictures/100000/velka/garden-gnome-1404749587o2K.jpg');
+       -webkit-background-size: cover;
+       -moz-background-size: cover;
+       -o-background-size: cover;
+       background-size: cover;
+       background-repeat: no-repeat !important;
+       background-position: top center !important;
+}
+
+.navbar{
+  opacity: 0.9;
+  background-color: white;
+}
+
+.gnome-image{
+  height: 100px;
+  width: 100px;
+}
+
+.thumbnail{
+  width: 350px;
+}
+
+.gnome-data{
+  font-family: fantasy;
+  text-align: center;
+}
+
+.buttons{
+  text-align: center;
+}
+
+.panel {
+ margin-bottom: 20px;
+ background-color: rgba(255, 255, 255, 0.75);
+ border: 1px solid transparent;
+ border-radius: 4px;
+ -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+ box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+ }
+
+ .vertical-offset-100 {
+    padding-top: 100px;
+}
+
+}
+.form-signin input[type="text"] {
+    margin-bottom: 5px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+.form-signin input[type="password"] {
+    margin-bottom: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+.form-signin .form-control {
+    position: relative;
+    font-size: 16px;
+    font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+    height: auto;
+    padding: 10px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
