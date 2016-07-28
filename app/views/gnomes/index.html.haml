@@ -5,8 +5,17 @@
 - else
   = link_to "Login", login_path
 
-%ul
-  - Gnome.all.each do |gnome|
-    %li= gnome.name
-    %p= gnome.price
-    %p= gnome.desc
+.container
+  %ul
+    .row
+      - Gnome.all.each do |gnome|
+        .col-sm-6.col-md-4
+          .thumbnail
+            %img.gnome-image{:alt => "...", :src => "https://pixabay.com/static/uploads/photo/2014/12/21/23/58/gnome-576496_960_720.png"}/
+            .caption
+              %h3.gnome-data= gnome.name
+              %p.gnome-data= gnome.price
+              %p.gnome-data= gnome.desc
+              .buttons
+                %a.btn.btn-danger{:href => "#", :role => "button"} Button
+                %a.btn.btn-default{:href => "#", :role => "button"} Button
