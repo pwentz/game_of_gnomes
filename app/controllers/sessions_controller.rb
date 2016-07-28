@@ -1,5 +1,5 @@
 class SessionsController < ApplicationController
-  def index
+  def new
   end
 
   def create
@@ -14,4 +14,8 @@ class SessionsController < ApplicationController
     end
   end
 
+  def destroy
+    session.clear
+    redirect_to gnomes_path
+  end
 end

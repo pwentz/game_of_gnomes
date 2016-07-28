@@ -5,14 +5,15 @@ Rails.application.routes.draw do
 
   resources :categories, only: [:show]
   resources :bucket_gnomes, only: [:create]
-  #resources :bucket, only: [:show, :update]
 
-  resources :users, only: [:new, :show, :create]
+  resources :users, only: [:new, :show, :create] do
+    resources :orders, only: [:index]
+  end
 
   get '/bucket' => "bucket#show"
   put '/bucket' => "bucket#update"
 
-  get '/login', to: 'sessions#index'
+  get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
 
