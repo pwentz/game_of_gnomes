@@ -17,11 +17,11 @@ class Bucket
   end
 
   def total
-    populated_contents.sum { |gnome, quantity| gnome.price.to_f * quantity }
+    populated_contents.sum { |gnome, quantity| gnome.price.to_f * quantity }.round(2)
   end
 
   def subtotal(gnome_subtotal)
-    gnome_subtotal[:gnome].price * gnome_subtotal[:quantity]
+    (gnome_subtotal[:gnome].price * gnome_subtotal[:quantity]).round(2)
   end
 
   def adjust_gnome_quantity(increase, gnome_id)

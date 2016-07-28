@@ -5,7 +5,9 @@ describe 'Visitor sees login and create account', :type => :feature do
 
     visit "/"
 
-    click_on 'Login'
+    within(".navbar") do
+      click_on 'Login'
+    end
 
     expect(current_path).to eq '/login'
   end
@@ -14,8 +16,9 @@ describe 'Visitor sees login and create account', :type => :feature do
 
     visit '/login'
 
-    expect(page).to have_content("Create Account")
-    expect(page).to have_content("Username")
-    expect(page).to have_content("Password")
+    within("fieldset") do
+      expect(page).to have_link("Create Account")
+      expect(page).to have_link("Login")
+    end
   end
 end

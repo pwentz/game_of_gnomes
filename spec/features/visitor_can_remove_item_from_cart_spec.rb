@@ -25,13 +25,15 @@ describe "User can remove item from cart", :type => :feature do
       visit gnome_path(gnome_three)
       click_button 'Add to bucket'
 
-      click_link "View bucket"
+      within(".navbar") do
+        click_link "View bucket"
+      end
 
       within("#gnome_#{gnome.id}") do
         click_link 'Remove from cart'
       end
 
-      within("ul") do
+      within(".gnome_bucket") do
         expect(page).not_to have_content(gnome.name)
       end
 

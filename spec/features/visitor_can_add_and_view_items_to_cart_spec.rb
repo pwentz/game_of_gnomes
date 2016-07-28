@@ -21,11 +21,12 @@ describe 'Visitor can add items to bucket and view items in bucket' do
 
     click_button 'Add to bucket'
 
-    click_link "View bucket"
+    within(".navbar") do
+      click_link "View bucket"
+    end
 
     expect(page).to have_content(gnome.name)
     expect(page).to have_content(gnome.price)
-    expect(page).to have_content(gnome.desc)
     expect(page).to have_css("img[src=\"#{gnome.image_url}\"]")
     expect(page).not_to have_content(gnome_two.name)
   end
@@ -43,7 +44,9 @@ describe 'Visitor can add items to bucket and view items in bucket' do
     visit gnome_path(gnome_three)
     click_button 'Add to bucket'
 
-    click_link "View bucket"
+    within(".navbar") do
+      click_link "View bucket"
+    end
 
     expect(page).to have_content(gnome.name)
     expect(page).to have_content(gnome_two.name)
@@ -63,7 +66,9 @@ describe 'Visitor can add items to bucket and view items in bucket' do
     visit gnome_path(gnome_three)
     click_button 'Add to bucket'
 
-    click_link "View bucket"
+    within(".navbar") do
+      click_link "View bucket"
+    end
 
     expected = gnome.price + gnome_two.price + gnome_three.price
 

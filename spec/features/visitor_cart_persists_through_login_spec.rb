@@ -8,7 +8,9 @@ describe 'Visitor cart items can persist into login' do
 
     visit gnomes_path
 
-    click_link 'View bucket'
+    within(".navbar") do
+      click_link 'View bucket'
+    end
 
     expect(page).to have_content("Login or Create Account to checkout")
     expect(page).not_to have_button("Checkout")
@@ -27,7 +29,9 @@ describe 'Visitor cart items can persist into login' do
     fill_in "Password", with: "password"
     click_on "Create Account"
 
-    click_link 'View bucket'
+    within(".navbar") do
+      click_link 'View bucket'
+    end
 
     expect(page).to have_button("Checkout")
 

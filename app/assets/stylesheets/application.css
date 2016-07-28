@@ -35,14 +35,17 @@
 }
 
 .thumbnail{
-  width: 350px;
+  /*width: 350px;
+*/
+  height: 250px;
 }
-
+.gnome_bucket{
+  background-color: white;
+}
 .gnome-data{
   font-family: fantasy;
   text-align: center;
 }
-
 .buttons{
   text-align: center;
 }
@@ -60,7 +63,7 @@
     padding-top: 100px;
 }
 
-}
+
 .form-signin input[type="text"] {
     margin-bottom: 5px;
     border-bottom-left-radius: 0;
