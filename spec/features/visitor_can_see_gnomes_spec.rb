@@ -10,6 +10,5 @@ describe 'Visitor can see gnomes', :type => :feature do
 
     expect(page).to have_content(gnome.name)
     expect(page).to have_content(gnome.price)
-    expect(page).to have_content(gnome.desc)
   end
 end

@@ -6,13 +6,13 @@
 
 
 %h5 Your Bucket
-%ul
+.gnome_bucket
   - @bucket.populated_contents.each do | gnome, quantity |
     %div{:id => "gnome_#{gnome.id}"}
+      %img.gnome-image{:alt => "...", :src => "https://pixabay.com/static/uploads/photo/2014/12/21/23/58/gnome-576496_960_720.png"}/
       = image_tag(gnome.image_url)
-      %li= link_to gnome.name, gnome_path(gnome)
+      = link_to gnome.name, gnome_path(gnome)
       %p= (gnome.price * 100).round / 100.0
-      %p= gnome.desc
       %p Quantity: #{quantity}
       = link_to "Remove from cart", bucket_path(gnome.id, :increase => false), method: :put
       = link_to "Increase quantity", bucket_path(gnome.id, :increase => true), method: :put

@@ -19,7 +19,9 @@ describe "UserCanLogout", type: :feature do
 
     visit gnomes_path
 
-    click_link "Logout"
+    within(".navbar") do
+      click_link "Logout"
+    end
 
     expect(page).not_to have_link("Logout")
     expect(page).to have_link("Login")

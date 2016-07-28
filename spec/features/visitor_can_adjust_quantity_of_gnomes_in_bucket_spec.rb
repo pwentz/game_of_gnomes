@@ -22,7 +22,7 @@ describe 'Visitor can adjust quantity of items in cart' do
 
     visit '/bucket'
 
-    within("ul") do
+    within("#gnome_#{gnome.id}") do
       click_link 'Increase quantity'
     end
 

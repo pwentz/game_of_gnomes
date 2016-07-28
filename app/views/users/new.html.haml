@@ -1,8 +1,19 @@
 %h5 Welcome
 
-= form_for(@user) do |f|
-  = f.label :username
-  = f.text_field :username
-  = f.label :password
-  = f.password_field :password
-  = f.submit "Create Account"
+.container
+  .row.vertical-offset-100
+    .col-md-4.col-md-offset-4
+      .panel.panel-default
+        .panel-heading
+          .row-fluid.user-row
+            %img.img-responsive{:alt => "Gnome", :src => "..."}/
+        .panel-body
+          %form.form-signin{"accept-charset" => "UTF-8", :role => "form"}
+            = form_for(@user) do |f|
+              %fieldset
+                %label.panel-login
+                  .login_result
+                = f.text_field :username, :class => "form-control", :placeholder => "Username"
+                = f.text_field :password, :class => "form-control", :placeholder => "Password"
+                %br/
+                = f.submit "Create Account", :class => "btn btn-success btn-lg btn-block"
