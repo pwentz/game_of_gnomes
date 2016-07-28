@@ -1,8 +1,5 @@
-- flash.each do | type, message |
-  = content_tag :div, sanitize(message), :class => "flash_#{type}"
-
-= link_to "View bucket", bucket_path 
+= link_to "View bucket", bucket_path
 
 %h5 Welcome, #{@user.username}
 
-= link_to "Logout", logout_path
+= link_to "Logout", logout_path, :method => :delete

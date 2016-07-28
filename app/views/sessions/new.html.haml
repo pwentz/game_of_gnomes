@@ -6,14 +6,13 @@
           .row-fluid.user-row
             %img.img-responsive{:alt => "Gnome", :src => "..."}/
         .panel-body
-          %form.form-signin{"accept-charset" => "UTF-8", :role => "form"}
-            = form_for :session, :url => login_path do |f|
-              %fieldset
-                %label.panel-login
-                  .login_result
-                = f.text_field :username, :class => "form-control", :placeholder => "Username"
-                = f.text_field :password, :class => "form-control", :placeholder => "Password"
-                %br/
-                = link_to "Create Account", new_user_path, :class => "create_account btn btn-lg btn-success btn-block", :id => "create_account"
-                %br/
-                = link_to "Login", login_path, :class => "btn btn-lg btn-success btn-block", :id => "login"
+        = form_for :session, url: login_path do |f|
+          %fieldset
+            %label.panel-login
+              .login_result
+            = f.text_field :username, :class => "form-control", :placeholder => "Username"
+            = f.password_field :password, :class => "form-control", :placeholder => "Password"
+            = f.submit "Login"
+            %br/
+            = link_to "Create New Account", new_user_path, :class => "create_account btn btn-lg btn-success btn-block", :id => "create_account"
+            %br/

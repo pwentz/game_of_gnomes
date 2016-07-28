@@ -74,8 +74,9 @@
   </div><!-- /.container-fluid -->
 </nav>
 <body>
-
 <%= yield %>
-
+<% flash.each do | type, message | %>
+  <%= content_tag :div, sanitize(message), class: "flash_#{type}" %>
+<% end %>
 </body>
 </html>
