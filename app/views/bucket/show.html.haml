@@ -10,7 +10,7 @@
   - @bucket.populated_contents.each do | gnome, quantity |
     %div{:id => "gnome_#{gnome.id}"}
       = image_tag(gnome.image_url)
-      %li= gnome.name
+      %li= link_to gnome.name, gnome_path(gnome)
       %p= (gnome.price * 100).round / 100.0
       %p= gnome.desc
       %p Quantity: #{quantity}
@@ -18,3 +18,10 @@
       = link_to "Increase quantity", bucket_path(gnome.id, :increase => true), method: :put
       %p Subtotal: $#{@bucket.subtotal(gnome: gnome, quantity: quantity)}
 %p Total price: $#{@bucket.total}
+
+- if current_user
+  = button_to 'Checkout', user_orders_path(current_user)
+- else
+  %p
+    = link_to 'Login', login_path
+    or #{link_to 'Create Account', new_user_path} to checkout
