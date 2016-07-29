@@ -9,6 +9,10 @@ class OrdersController < ApplicationController
     redirect_to orders_path
   end
 
+  def show
+    @order = current_user.orders.find(params[:id])
+  end
+
   # def update
   #   # change status enum - see controller
       # timestamp

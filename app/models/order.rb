@@ -1,4 +1,5 @@
 class Order < ActiveRecord::Base
+
   belongs_to :user
   has_many :order_gnomes
   has_many :gnomes, through: :order_gnomes
@@ -9,6 +10,10 @@ class Order < ActiveRecord::Base
       order_gnome.quantity = quantity
       order_gnome.save
     end
+  end
+
+  def updated?
+    true unless status == "ordered"
   end
 
   def total
