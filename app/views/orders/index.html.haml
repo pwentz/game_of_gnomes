@@ -1,1 +1,15 @@
 %h5= current_user.username
+- current_user.orders.each do |order|
+  %table.table.table-default
+    %tr
+      %th Gnomes
+      %th Quanitity
+      %th Subtotal
+    - order.order_gnomes.each do |order_gnome|
+      %tr
+        %td= order_gnome.gnome.name
+        %td= order_gnome.quantity
+        %td= order_gnome.subtotal 
+    %tr
+      %td{:colspan => "2"} Total
+      %td= order.total
