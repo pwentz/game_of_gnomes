@@ -31,28 +31,46 @@ describe 'Visitor can adjust quantity of items in cart' do
     expect(current_path).to eq('/bucket')
   end
 
-  scenario 'and they can remove the quantity and see the price differences' do
-    gnome_one, gnome_two = create_list(:gnome, 2)
+  context 'they have multiple instances of item' do
+    scenario 'and they can remove the quantity and see the price differences' do
+      gnome_one, gnome_two = create_list(:gnome, 2)
+      page.set_rack_session(:bucket => {gnome_one.id => 2,
+                                     gnome_two.id => 1})
 
-    visit gnome_path(gnome_one)
-    click_button 'Add to bucket'
-    click_button 'Add to bucket'
 
-    visit gnome_path(gnome_two)
-    click_button 'Add to bucket'
+      visit bucket_path
 
-    visit '/bucket'
+      within("#gnome_#{gnome_one.id}") do
+        click_link "Decrease quantity"
+      end
 
-    within("#gnome_#{gnome_one.id}") do
-      click_link "Remove from cart"
+      within("#gnome_#{gnome_one.id}") do
+        expect(page).to have_content("Quantity: 1")
+        expect(page).to have_content("Subtotal: $#{gnome_one.price}")
+      end
+
+      expect(page).to have_content("Total price: $#{gnome_one.price + gnome_two.price}")
+      expect(current_path).to eq("/bucket")
     end
+  end
 
-    within("#gnome_#{gnome_one.id}") do
-      expect(page).to have_content("Quantity: 1")
-      expect(page).to have_content("Subtotal: $#{gnome_one.price}")
+  context 'they have 1 of an item left' do
+    scenario 'the quantity cannot go below 0' do
+      gnome = create(:gnome)
+      page.set_rack_session(:bucket => {gnome.id => 1})
+
+      visit bucket_path
+
+      within("#gnome_#{gnome.id}") do
+        2.times do
+          click_link("Decrease quantity")
+        end
+      end
+
+      within("#gnome_#{gnome.id}") do
+        expect(page).to have_content("Quantity: 0")
+      end
+
     end
-
-    expect(page).to have_content("Total price: $#{gnome_one.price + gnome_two.price}")
-    expect(current_path).to eq("/bucket")
   end
 end
