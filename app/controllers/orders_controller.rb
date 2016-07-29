@@ -8,4 +8,9 @@ class OrdersController < ApplicationController
     flash[:notice] = "Order was successfully placed."
     redirect_to orders_path
   end
+
+  # def update
+  #   # change status enum - see controller
+      # timestamp
+  # end
 end

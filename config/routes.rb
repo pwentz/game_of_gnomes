@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   resources :users, only: [:new, :show, :create]
 
-  resources :orders, only: [:index, :create]
+  resources :orders, only: [:index, :create, :show]
 
   get '/bucket' => "bucket#show"
   put '/bucket' => "bucket#update"

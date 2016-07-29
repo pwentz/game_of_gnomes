@@ -14,4 +14,6 @@ class Order < ActiveRecord::Base
   def total
     order_gnomes.to_a.sum { |order_gnome| order_gnome.subtotal.to_f }
   end
+
+  enum status: %w(ordered paid completed cancelled)
 end
