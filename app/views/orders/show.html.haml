@@ -1,0 +1,19 @@
+%h5= current_user.username
+%table.table.table-default
+  %h4= "Order ##{@order.id}"
+  %h5= "Ordered at: #{@order.created_at.strftime("%b %e, %l:%M %p")}"
+  - if @order.updated?
+    %h5= "Order updated at: #{@order.updated_at.strftime("%b %e, %l:%M %p")}"
+  %h5= "Order status: #{@order.status}"
+  %tr
+    %th Gnomes
+    %th Quanitity
+    %th Subtotal
+  - @order.order_gnomes.each do |order_gnome|
+    %tr
+      %td= link_to "#{order_gnome.gnome.name}", gnome_path(order_gnome.gnome)
+      %td= order_gnome.quantity
+      %td= order_gnome.subtotal
+  %tr
+    %td{:colspan => "2"} Total
+    %td= @order.total

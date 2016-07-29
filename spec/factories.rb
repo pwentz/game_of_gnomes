@@ -16,4 +16,9 @@ FactoryGirl.define do
   factory :category do
     name { Faker::Lorem.word }
   end
+
+  factory :order do
+    user
+    status 0
+  end
 end
