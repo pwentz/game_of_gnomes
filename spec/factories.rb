@@ -10,6 +10,7 @@ FactoryGirl.define do
     desc { Faker::Lorem.sentence }
     image_url { Faker::Placeholdit.image }
     category
+    role 0
   end
 
   factory :category do
