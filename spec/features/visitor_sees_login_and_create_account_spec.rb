@@ -17,8 +17,8 @@ describe 'Visitor sees login and create account', :type => :feature do
     visit '/login'
 
     within("fieldset") do
-      expect(page).to have_link("Create Account")
-      expect(page).to have_link("Login")
+      expect(page).to have_link("Create New Account")
+      expect(page).to have_button("Login")
     end
   end
 end
