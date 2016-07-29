@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :gnomes, only: [:index, :show]
 
   resources :categories, only: [:show]
-  resources :bucket_gnomes, only: [:create]
+  resources :bucket_gnomes, only: [:create, :update, :destroy]
 
   resources :users, only: [:new, :show, :create]
 

@@ -7,9 +7,10 @@
       = link_to gnome.name, gnome_path(gnome)
       %p= (gnome.price * 100).round / 100.0
       %p Quantity: #{gnome.quantity}
-      = link_to "Remove from cart", bucket_path(gnome.id, :increase => false), method: :put
-      = link_to "Increase quantity", bucket_path(gnome.id, :increase => true), method: :put
+      = link_to "Decrease quantity", bucket_gnome_path(gnome.id, :function => "decrease"), method: :put
+      = link_to "Increase quantity", bucket_gnome_path(gnome.id, :function => "increase"), method: :put
       %p Subtotal: $#{gnome.subtotal}
+      = link_to "Remove from cart", bucket_gnome_path(gnome.id), method: :delete
 %p Total price: $#{@bucket.total}
 
 - if current_user

@@ -12,7 +12,7 @@ class Bucket
 
   def populated_contents
     contents.map do |gnome, quantity|
-      GnomeBucket.new(gnome, quantity)
+      BucketGnome.new(gnome, quantity)
     end
   end
 

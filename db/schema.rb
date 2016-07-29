@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160728230642) do
+ActiveRecord::Schema.define(version: 20160729023715) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,14 +22,6 @@ ActiveRecord::Schema.define(version: 20160728230642) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "gnome_orders", force: :cascade do |t|
-    t.integer "gnome_id"
-    t.integer "order_id"
-  end
-
-  add_index "gnome_orders", ["gnome_id"], name: "index_gnome_orders_on_gnome_id", using: :btree
-  add_index "gnome_orders", ["order_id"], name: "index_gnome_orders_on_order_id", using: :btree
-
   create_table "gnomes", force: :cascade do |t|
     t.string  "name"
     t.decimal "price"
@@ -39,6 +31,14 @@ ActiveRecord::Schema.define(version: 20160728230642) do
   end
 
   add_index "gnomes", ["category_id"], name: "index_gnomes_on_category_id", using: :btree
+
+  create_table "order_gnomes", force: :cascade do |t|
+    t.integer "gnome_id"
+    t.integer "order_id"
+  end
+
+  add_index "order_gnomes", ["gnome_id"], name: "index_order_gnomes_on_gnome_id", using: :btree
+  add_index "order_gnomes", ["order_id"], name: "index_order_gnomes_on_order_id", using: :btree
 
   create_table "orders", force: :cascade do |t|
     t.decimal "total_price"
@@ -54,8 +54,8 @@ ActiveRecord::Schema.define(version: 20160728230642) do
     t.datetime "updated_at",      null: false
   end
 
-  add_foreign_key "gnome_orders", "gnomes"
-  add_foreign_key "gnome_orders", "orders"
   add_foreign_key "gnomes", "categories"
+  add_foreign_key "order_gnomes", "gnomes"
+  add_foreign_key "order_gnomes", "orders"
   add_foreign_key "orders", "users"
 end
