@@ -5,7 +5,7 @@ describe 'Visitor can create an account', :type => :feature do
 
     visit "/login"
 
-    click_on 'Create Account'
+    click_on 'Create New Account'
 
     fill_in "Username", with: "Alan"
     fill_in "Password", with: "password"
