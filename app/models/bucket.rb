@@ -11,17 +11,13 @@ class Bucket
   end
 
   def populated_contents
-    contents.reduce({}) do |result, pair|
-      result.merge!(Gnome.find(pair.first) => pair.last)
+    contents.map do |gnome, quantity|
+      GnomeBucket.new(gnome, quantity)
     end
   end
 
   def total
-    populated_contents.sum { |gnome, quantity| gnome.price.to_f * quantity }.round(2)
-  end
-
-  def subtotal(gnome_subtotal)
-    (gnome_subtotal[:gnome].price * gnome_subtotal[:quantity]).round(2)
+    populated_contents.sum { |gnome| gnome.price * gnome.quantity }.to_f
   end
 
   def adjust_gnome_quantity(increase, gnome_id)
