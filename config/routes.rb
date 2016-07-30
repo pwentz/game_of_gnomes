@@ -18,4 +18,8 @@ Rails.application.routes.draw do
   delete '/logout', to: 'sessions#destroy'
 
   get '/dashboard', to: 'users#show'
+
+  namespace :admin do
+    get '/dashboard', to: 'admin#index'
+  end
 end

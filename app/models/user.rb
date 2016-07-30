@@ -1,6 +1,8 @@
 class User < ActiveRecord::Base
   has_secure_password
-  has_many :orders 
+  has_many :orders
   validates_presence_of :username
   validates_uniqueness_of :username
+
+  enum role: %w(default admin)
 end
