@@ -32,5 +32,4 @@ RSpec.describe Category, type: :model do
       Category.find_by_name('wild-cr8zee-gn0mes')
     ).to eq(category)
   end
-
 end
