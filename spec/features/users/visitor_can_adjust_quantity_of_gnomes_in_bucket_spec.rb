@@ -1,17 +1,4 @@
 require 'rails_helper'
-#Background: My cart has an item in it,
-#When I visit '/cart'
-#then I should see my item with a quantity of 1
-#and when I increase the quantity
-#then my current page should be '/cart'
-#And that item's quantity should reflect the increase
-#and the subtotal for that item should increase
-#and the total for the cart should match that increase
-#and when I decrease the quantity
-#then my current page should be '/cart'
-#and that item's quantity should reflect the decrease
-#and the subtotal for that item should decrease
-#and the total for the cart should match that decrease
 
 describe 'Visitor can adjust quantity of items in cart' do
 
