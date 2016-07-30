@@ -1,5 +1,6 @@
 class BucketGnome < SimpleDelegator
   attr_reader :quantity, :gnome, :gnome_key
+  
   def initialize(gnome, quantity=nil)
     @gnome = Gnome.find(gnome)
     @quantity = quantity
@@ -26,5 +27,4 @@ class BucketGnome < SimpleDelegator
       bucket.contents[gnome_key] -= 1
     end
   end
-
 end

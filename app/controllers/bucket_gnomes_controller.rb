@@ -6,7 +6,7 @@ class BucketGnomesController < ApplicationController
     gnome = Gnome.find(params[:gnome_id])
     @bucket.add_gnome(gnome)
     session[:bucket] = @bucket.contents
-    flash[:notice] = "Added #{pluralize(1, gnome.name)} to your bucket."
+    flash[:notice] = "Added #{pluralize(@bucket.contents[gnome.id.to_s], gnome.name)} to your bucket."
     redirect_to gnome_path(gnome)
   end
 

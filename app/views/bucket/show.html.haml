@@ -13,8 +13,11 @@
       = link_to "Remove from cart", bucket_gnome_path(gnome.id), method: :delete
 %p Total price: $#{@bucket.total}
 
-- if current_user
+- if current_user && !@bucket.empty?
   = button_to 'Checkout', orders_path
+-elsif current_user && @bucket.empty?
+  %p Your bucket is empty!
+  = link_to "Get some gnomes!", gnomes_path 
 - else
   %p
     = link_to 'Login', login_path

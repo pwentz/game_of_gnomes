@@ -6,11 +6,12 @@
       .panel.panel-default
         .panel-heading
           .row-fluid.user-row
-            %img.img-responsive{:alt => "Gnome", :src => "..."}/
+            %img.img-responsive{:alt => "Gnome", :src => "https://pixabay.com/static/uploads/photo/2014/04/02/10/47/red-304538_960_720.png"}/
         .panel-body
         %fieldset
           %label.panel-login
             .login_result
+            %h5 Create a new account
             = form_for(@user) do |f|
               = f.text_field :username, :class => "form-control", :placeholder => "Username"
               = f.password_field :password, :class => "form-control", :placeholder => "Password"

@@ -12,10 +12,12 @@
  *
  *= require_tree .
  *= require_self
+ *= require foundation_and_overrides
+
  */
 
  body{
-       background-image: url('http://www.publicdomainpictures.net/pictures/100000/velka/garden-gnome-1404749587o2K.jpg');
+       /*background-image: url('http://www.publicdomainpictures.net/pictures/100000/velka/garden-gnome-1404749587o2K.jpg');*/
        -webkit-background-size: cover;
        -moz-background-size: cover;
        -o-background-size: cover;
@@ -83,4 +85,38 @@
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
+}
+
+.img-responsive{
+  height: 180px;
+  width: 180px;
+  margin: auto;
+}
+
+.hero{
+  background-color: #999;
+  padding: 80px 0px;
+  height: 480px;
+  background-image: url(green.png);
+  /*background-image: url(green.png);*/
+}
+
+.wrap{
+  width: 90%;
+  margin: 0 auto;
+  max-width: 1100px;
+}
+
+footer{
+  height: 300px;
+  background-color: #222;
+  padding: 80px 0px;
+}
+
+footer a{
+  display: block;
+}
+
+footer h4{
+  color: white;
 }

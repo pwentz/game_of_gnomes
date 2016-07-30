@@ -20,21 +20,7 @@ class Bucket
     populated_contents.sum { |gnome| gnome.price * gnome.quantity }.to_f
   end
 
-  def adjust_gnome_quantity(increase, gnome_id)
-    if increase == "true"
-      increase_gnome_quantity(gnome_id)
-    else
-      reduce_gnome_quantity(gnome_id)
-    end
+  def empty?
+    contents.empty?
   end
-
-  def increase_gnome_quantity(gnome_id)
-    contents[gnome_id] += 1
-  end
-
-  def reduce_gnome_quantity(gnome_id)
-    contents[gnome_id] -= 1
-    contents.delete(gnome_id) if contents[gnome_id].zero?
-  end
-
 end
