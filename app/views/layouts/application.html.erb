@@ -1,81 +1,71 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>GameOfGnomes</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-  <%= stylesheet_link_tag    'application', media: 'all' %>
-  <%= javascript_include_tag 'application' %>
-  <%= csrf_meta_tags %>
-</head>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<nav class="navbar navbar-default navbar-fixed-top">
-  <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="#">
-        <img src="https://pixabay.com/static/uploads/photo/2014/04/02/10/47/red-304538_960_720.png", height="30px", width="30px", alt="" />
-      </a>
+    <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
+
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+
+  <body>
+
+  <div class="top-bar">
+    <div class="wrap">
+      <div class="top-bar-left">
+        <ul class="menu">
+          <li class="menu-text">Game Of Gnomes</li>
+          <li>
+            <a href="#">Homepage</a>
+          </li>
+        </ul>
+      </div>
+      <div class="top-bar-right">
+        <ul class="menu">
+          <li>
+            <a href="#">First</a>
+          </li>
+        </ul>
+      </div>
     </div>
+  </div>
 
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li>
-          <% if current_user %>
-            <%= link_to "Logout", logout_path, :method => :delete %><span class="sr-only">(current)</span>
-          <% else %>
-            <%= link_to "Login", login_path %><span class="sr-only">(current)</span>
-          <% end %>
-        </li>
-        <li><a href="#">Link</a></li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">Separated link</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">One more separated link</a></li>
-          </ul>
-        </li>
-      </ul>
-      <form class="navbar-form navbar-left">
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Search">
-        </div>
-        <button type="submit" class="btn btn-default">Submit</button>
-      </form>
-      <ul class="nav navbar-nav navbar-right">
-        <li>
-          <%= link_to "View bucket", bucket_path(@bucket) %>
-        </li>
 
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> User sign-in </span><span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">Separated link</a></li>
-          </ul>
-        </li>
-      </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>
-<body>
-<%= yield %>
-<% flash.each do | type, message | %>
-  <%= content_tag :div, sanitize(message), class: "flash_#{type}" %>
-<% end %>
-</body>
+  <section class="main">
+    <%= yield %>
+  </section>
+
+  <footer>
+    <div class="wrap row small-up-1 medium-up-3">
+
+      <div class="column">
+        <h4>Contact Info</h4>
+        <hr>
+        <a href="#"><span>Address</span> 1530 Blake St </a>
+        <a href="#"><span>Contact Number</span> 303-895-0492</a>
+        <a href="#"><span>Email</span> info@game_of_gnomes.com</a>
+      </div>
+
+
+      <div class="column">
+        <h4>Site Map</h4>
+        <hr>
+          <a href="#">About Us</a>
+          <a href="#">Services</a>
+          <a href="#">Contact Us</a>
+      </div>
+
+      <div class="column">
+        <h4>Resources</h4>
+        <hr>
+          <a href="#">Police</a>
+          <a href="#">Goblins</a>
+          <a href="#">Jimmy Johns</a>
+      </div>
+    </div>
+  </footer>
+  </body>
 </html>
