@@ -15,4 +15,10 @@ describe "User cannot view admin dashboard", :type => :feature do
 
     expect(page).to have_content("The page you were looking for doesn't exist.")
   end
+
+  scenario 'and when an unregistered user visits admin dashboard they get a 404' do
+    visit admin_dashboard_path
+
+    expect(page).to have_content("The page you were looking for doesn't exist.")
+  end
 end
