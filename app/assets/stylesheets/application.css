@@ -27,6 +27,9 @@
 
 .navbar {
   background-color: white;
+  box-shadow: 0 1px black;
+  -moz-box-shadow: 0 1px black;
+  -webkit-box-shadow: 0 1px black;
 }
 
 .gnome-image {
@@ -120,11 +123,12 @@ footer h4 {
 
 .top-bar {
   padding: 0;
+  border-color: red;
+  border-bottom-width: thick;
 }
 
 .menu > li > a {
   display: inline-block;
-
 }
 
 .top-bar-right {
@@ -145,14 +149,12 @@ footer h4 {
 }
 
 li a {
-  /*color: rgb(182, 44, 44);*/
   color: black;
   font-family: fantasy;
   font-size: 20px;
 }
 
 .homepage-text {
-  /*font-weight: normal;*/
   font-family: fantasy;
   font-size: 40px;
   color: white;
