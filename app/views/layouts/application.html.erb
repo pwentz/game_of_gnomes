@@ -28,7 +28,7 @@
               <ul class="menu">
                 <% if @categories %>
                   <% @categories.each do |category| %>
-                    <li><%= link_to "#{category.name}.capatalize", category_path(category) %></li>
+                    <li><%= link_to "#{category.name}", category_path(category) %></li>
                   <% end %>
                 <% end %>
               </ul>
