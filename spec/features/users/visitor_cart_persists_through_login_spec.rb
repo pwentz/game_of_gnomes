@@ -35,12 +35,8 @@ describe 'Visitor cart items can persist into login' do
 
     expect(page).to have_button("Checkout")
 
-    within("#gnome_#{gnome_one.id}") do
-      expect(page).to have_link(gnome_one.name)
-    end
+    expect(page).to have_link(gnome_one.name)
 
-    within("#gnome_#{gnome_two.id}") do
-      expect(page).to have_link(gnome_two.name)
-    end
+    expect(page).to have_link(gnome_two.name)
   end
 end
