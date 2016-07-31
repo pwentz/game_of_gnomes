@@ -14,11 +14,12 @@ FactoryGirl.define do
   end
 
   factory :category do
-    name { Faker::Lorem.word }
+    name { Faker::Company.profession }
   end
 
   factory :order do
     user
     status 0
   end
+
 end
