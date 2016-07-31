@@ -1,19 +1,19 @@
 .container
   .row.vertical-offset-100
-    .col-md-4.col-md-offset-4
+    .col-md-4.col-md-offset-4.login
       .panel.panel-default
         .panel-heading
           .row-fluid.user-row
-            %img.img-responsive{:alt => "Gnome", :src => "https://pixabay.com/static/uploads/photo/2014/04/02/10/47/red-304538_960_720.png"}/
+            %img.img-responsive#mushroom{:alt => "Gnome", :src => "https://pixabay.com/static/uploads/photo/2014/04/02/10/47/red-304538_960_720.png"}/
         .panel-body
-        = form_for :session, url: login_path do |f|
-          %fieldset
-            %label.panel-login
-              .login_result
-              %h5 Login
-            = f.text_field :username, :class => "form-control", :placeholder => "Username"
-            = f.password_field :password, :class => "form-control", :placeholder => "Password"
-            = f.submit "Login"
-            %br/
-            = link_to "Create New Account", new_user_path, :class => "create_account btn btn-lg btn-success btn-block", :id => "create_account"
-            %br/
+        %fieldset.login-form
+          %label.panel-login
+            .login_result
+            %h5 Login
+            = form_for :session, url: login_path do |f|
+              = f.text_field :username, :class => "form-control", :placeholder => "Username"
+              = f.password_field :password, :class => "form-control", :placeholder => "Password"
+              = f.submit "Login"
+              %br/
+              %hr
+              = link_to "Create New Account", new_user_path, :class => "create_account btn btn-lg btn-success btn-block", :id => "create_account"
