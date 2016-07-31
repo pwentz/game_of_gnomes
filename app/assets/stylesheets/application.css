@@ -16,39 +16,38 @@
 
  */
 
- body{
-       /*background-image: url('http://www.publicdomainpictures.net/pictures/100000/velka/garden-gnome-1404749587o2K.jpg');*/
-       -webkit-background-size: cover;
-       -moz-background-size: cover;
-       -o-background-size: cover;
-       background-size: cover;
-       background-repeat: no-repeat !important;
-       background-position: top center !important;
+ body {
+   -webkit-background-size: cover;
+   -moz-background-size: cover;
+   -o-background-size: cover;
+   background-size: cover;
+   background-repeat: no-repeat !important;
+   background-position: top center !important;
 }
 
-.navbar{
-  opacity: 0.9;
+.navbar {
   background-color: white;
+  box-shadow: 0 1px black;
+  -moz-box-shadow: 0 1px black;
+  -webkit-box-shadow: 0 1px black;
 }
 
-.gnome-image{
+.gnome-image {
   height: 100px;
   width: 100px;
 }
 
-.thumbnail{
-  /*width: 350px;
-*/
+.thumbnail {
   height: 250px;
 }
-.gnome_bucket{
+.gnome_bucket {
   background-color: white;
 }
-.gnome-data{
+.gnome-data {
   font-family: fantasy;
   text-align: center;
 }
-.buttons{
+.buttons {
   text-align: center;
 }
 
@@ -78,7 +77,6 @@
   width: 100px;
   text-align: center
 }
-
 .form-signin input[type="text"] {
     margin-bottom: 5px;
     border-bottom-left-radius: 0;
@@ -100,7 +98,7 @@
     box-sizing: border-box;
 }
 
-.img-responsive{
+.img-responsive {
   height: 180px;
   width: 180px;
   margin: auto;
@@ -116,26 +114,68 @@
   background-color: #999;
   padding: 80px 0px;
   height: 480px;
-  background-image: url(green.png);
-  /*background-image: url(green.png);*/
+  background-image: url(garden-gnome.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  border: 2px outset;
+  border-color: black;
 }
 
-.wrap{
+.wrap {
   width: 90%;
   margin: 0 auto;
   max-width: 1100px;
 }
 
-footer{
-  height: 300px;
+footer {
   background-color: #222;
   padding: 80px 0px;
 }
 
-footer a{
+footer a {
   display: block;
 }
 
-footer h4{
+footer h4 {
   color: white;
+}
+
+.top-bar {
+  padding: 0;
+  border-color: red;
+  border-bottom-width: thick;
+}
+
+.menu > li > a {
+  display: inline-block;
+}
+
+.top-bar-right {
+  padding: 5px;
+}
+
+.top-bar-left {
+  padding: 5px;
+  top-padding: 15px;
+}
+
+.menu-text {
+  padding: 0px;
+}
+
+.top-bar ul {
+  background-color: white;
+}
+
+li a {
+  color: black;
+  font-family: fantasy;
+  font-size: 20px;
+}
+
+.homepage-text {
+  font-family: fantasy;
+  font-size: 40px;
+  color: white;
+  margin-top: 80px;
 }

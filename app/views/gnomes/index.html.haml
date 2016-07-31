@@ -1,17 +1,17 @@
 .body
   %section.hero
     .wrap
-      %p.hompage-text{:style => "font-family: fantasy; font-size: 40px;"} Gnomes. They're not creepy at all.
-      %a.button{:href => "#"} Learn more
+      %p.homepage-text Gnomes. They're not creepy at all.
   .row.column.text-center
-    %h2{:style => "font-family: fantasy; margin: auto; margin-top: 10px;"} Gnomes
+    %h2.banner{:style => "font-family: fantasy; margin: auto; margin-top: 10px;"} Gnomes
     %hr/
-    .row.small-up-2.med-up-3.large-up-5
-      - @gnomes.each do |gnome|
-        .column
-          %img.thumbnail{:src => "https://pixabay.com/static/uploads/photo/2014/12/21/23/58/gnome-576496_960_720.png"}/
-          %h5.gnome-data
-            = gnome.name
-          %h5.gnome-data
-            = gnome.price
-          %a.small.expanded.button.hollow{:href => gnome_path(gnome)} More
+    .wrap
+      .row.small-up-2.med-up-3.large-up-4
+        - @gnomes.each do |gnome|
+          .column
+            %img.thumbnail{:src => "https://pixabay.com/static/uploads/photo/2014/12/21/23/58/gnome-576496_960_720.png"}/
+            %h5.gnome-data
+              = gnome.name
+            %h5.gnome-data
+              = gnome.price
+            %a.small.expanded.button.hollow{:href => gnome_path(gnome)} More
