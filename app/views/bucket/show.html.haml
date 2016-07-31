@@ -44,7 +44,6 @@
           %td{:width => "400"} Total Price:
           %td $#{@bucket.total}
 
-
   - if current_user && !@bucket.empty?
     = button_to 'Checkout', orders_path
   -elsif current_user && @bucket.empty?
