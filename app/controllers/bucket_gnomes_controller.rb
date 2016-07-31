@@ -12,14 +12,12 @@ class BucketGnomesController < ApplicationController
 
   def update
     bucket_gnome = BucketGnome.new(@gnome.id)
-    adjustment = params["function"]
-    bucket_gnome.adjust_quantity(adjustment, @bucket)
+    bucket_gnome.adjust_quantity(params[:adjustment], @bucket)
     redirect_to bucket_path
   end
 
   def destroy
     @bucket.contents.delete(params[:id])
-    gnome_link = view_context.link_to(@gnome.name, gnome_path(@gnome))
     flash[:success] = %Q[Successfully removed <a href="/gnomes/#{@gnome.id}">#{@gnome.name}</a>]
     redirect_to bucket_path
   end

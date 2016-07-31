@@ -1,4 +1,5 @@
 class SessionsController < ApplicationController
+  helper_method :user_admin_redirect
   def new
   end
 
@@ -7,11 +8,7 @@ class SessionsController < ApplicationController
     if user && user.authenticate(params[:session][:password])
       session[:user_id] = user.id
       flash[:success] = "Successfully logged in!"
-      if current_user.admin?
-        redirect_to admin_dashboard_path
-      else
-        redirect_to dashboard_path
-      end
+      redirect_to user_admin_redirect
     else
       flash[:danger] = "Invalid login!"
       render :new
@@ -20,6 +17,17 @@ class SessionsController < ApplicationController
 
   def destroy
     session.clear
+    flash[:success] = "Successfully logged out!"
     redirect_to gnomes_path
+  end
+
+  private
+
+  def user_admin_redirect
+    if current_admin?
+      admin_dashboard_path
+    else
+      dashboard_path
+    end
   end
 end

@@ -27,9 +27,9 @@
             %td
               %p Quantity: #{gnome.quantity}
             %td
-              = link_to "Decrease quantity", bucket_gnome_path(gnome.id, :function => "decrease"), method: :put
+              = link_to "Decrease quantity", bucket_gnome_path(gnome.id, :adjustment => "decrease"), method: :put
             %td
-              = link_to "Increase quantity", bucket_gnome_path(gnome.id, :function => "increase"), method: :put
+              = link_to "Increase quantity", bucket_gnome_path(gnome.id, :adjustment => "increase"), method: :put
             %td
               = link_to "Remove from cart", bucket_gnome_path(gnome.id), method: :delete
             %td
