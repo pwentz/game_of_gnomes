@@ -9,12 +9,10 @@ describe 'Visitor can adjust quantity of items in cart' do
 
     visit '/bucket'
 
-    within("#gnome_#{gnome.id}") do
-      click_link 'Increase quantity'
-    end
+    click_link 'Increase quantity'
 
     expect(page).to have_content("Quantity: 2")
-    expect(page).to have_content("Total price: $#{gnome.price * 2}")
+    expect(page).to have_content("$#{gnome.price * 2}")
     expect(current_path).to eq('/bucket')
   end
 
@@ -27,16 +25,14 @@ describe 'Visitor can adjust quantity of items in cart' do
 
       visit bucket_path
 
-      within("#gnome_#{gnome_one.id}") do
-        click_link "Decrease quantity"
+      within(:path, '/html/body/section/div/div/table/tbody/tr[1]/td[5]') do
+        click_link("Decrease quantity")
       end
 
-      within("#gnome_#{gnome_one.id}") do
         expect(page).to have_content("Quantity: 1")
-        expect(page).to have_content("Subtotal: $#{gnome_one.price}")
-      end
+        expect(page).to have_content("$#{gnome_one.price}")
 
-      expect(page).to have_content("Total price: $#{gnome_one.price + gnome_two.price}")
+      expect(page).to have_content("$#{gnome_one.price + gnome_two.price}")
       expect(current_path).to eq("/bucket")
     end
   end
@@ -48,15 +44,11 @@ describe 'Visitor can adjust quantity of items in cart' do
 
       visit bucket_path
 
-      within("#gnome_#{gnome.id}") do
-        2.times do
-          click_link("Decrease quantity")
-        end
+      2.times do
+        click_link("Decrease quantity")
       end
 
-      within("#gnome_#{gnome.id}") do
-        expect(page).to have_content("Quantity: 0")
-      end
+      expect(page).to have_content("Quantity: 0")
 
     end
   end

@@ -11,7 +11,7 @@ describe "visitor can remove item from cart", :type => :feature do
 
       visit bucket_path
 
-      within("#gnome_#{gnome.id}") do
+      within("/html/body/section/div/div/table/tbody/tr[1]/td[7]") do
         click_link 'Remove from cart'
       end
 
