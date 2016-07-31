@@ -2,8 +2,8 @@ require 'rails_helper'
 
 describe "Admin views dashboard", :type => :feature do
   scenario "and sees Admin Dashboard" do
-    admin = User.create(username: 'Alan', password: 'password', role: 1)
-    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(admin)
+    admin = create(:user, :role => 1)
+    page.set_rack_session(:user_id => admin.id)
 
     visit login_path
 
@@ -12,7 +12,9 @@ describe "Admin views dashboard", :type => :feature do
 
     click_on "Login"
 
-    expect(page).to have_content("Admin Dashboard")
-    expect(page).not_to have_content("Welcome, Alan")
+    expect(current_path).to eq(admin_dashboard_path)
+    within(".main") do
+      expect(page).to have_content("Admin Dashboard")
+    end
   end
 end

@@ -1,5 +1,1 @@
-%h3
-  = @category.name
-  Category Show Page
-- @category.gnomes.each do |gnome|
-  %h5= gnome.name
+= render partial: 'shared/gnomes', :locals => { target: @category.gnomes, target_name: @category.name }

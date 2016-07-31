@@ -2,7 +2,7 @@
 - current_user.orders.each do |order|
   %table.table.table-default
     %h4= "Order ##{order.id}"
-    %h5= link_to "View Order History", order_path(order.id)
+    %h5= link_to "View Order History", order_path(order)
     %tr
       %th Gnomes
       %th Quanitity
