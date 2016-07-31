@@ -2,13 +2,13 @@
 
 .container
   .row.vertical-offset-100
-    .col-md-4.col-md-offset-4
+    .col-md-4.col-md-offset-4.login
       .panel.panel-default
         .panel-heading
           .row-fluid.user-row
-            %img.img-responsive{:alt => "Gnome", :src => "https://pixabay.com/static/uploads/photo/2014/04/02/10/47/red-304538_960_720.png"}/
+            %img.img-responsive#mushroom{:alt => "Gnome", :src => "https://pixabay.com/static/uploads/photo/2014/04/02/10/47/red-304538_960_720.png"}/
         .panel-body
-        %fieldset
+        %fieldset.login-form
           %label.panel-login
             .login_result
             %h5 Create a new account
