@@ -32,6 +32,10 @@
   -webkit-box-shadow: 0 1px black;
 }
 
+.flash_success {
+  background-color: green;
+}
+
 .gnome-image {
   height: 100px;
   width: 100px;
@@ -102,6 +106,22 @@
   height: 180px;
   width: 180px;
   margin: auto;
+}
+
+.gnome-details {
+  width: 650px;
+}
+#price {
+  text-align: left;
+}
+#gnome-image{
+  margin-right: 25px;
+}
+.gnome-box {
+  margin: 0 auto;
+  width: 800px;
+  margin-top: 50px;
+  margin-bottom: 35px;
 }
 
 #mushroom {
