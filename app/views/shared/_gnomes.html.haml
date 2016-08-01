@@ -8,6 +8,5 @@
           %img.thumbnail{:src => "https://pixabay.com/static/uploads/photo/2014/12/21/23/58/gnome-576496_960_720.png"}/
           %h5.gnome-data
             = gnome.name
-          %h5.gnome-data
-            = gnome.price
+          %h5.gnome-data $#{gnome.price}
           %a.small.expanded.button.hollow{:href => gnome_path(gnome)} More

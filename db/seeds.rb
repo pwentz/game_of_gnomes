@@ -5,9 +5,14 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-8.times do
+4.times do
   Gnome.create(name: Faker::GameOfThrones.character, price: Faker::Commerce.price,
                desc: Faker::Lorem.sentence)
+end
+
+4.times do
+  Gnome.create(name: Faker::GameOfThrones.character, price: Faker::Commerce.price,
+               desc: Faker::Lorem.sentence, role: 1)
 end
 
 3.times do
