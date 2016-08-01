@@ -104,6 +104,22 @@
   margin: auto;
 }
 
+.gnome-details {
+  width: 650px;
+}
+#price {
+  text-align: left;
+}
+#gnome-image{
+  margin-right: 25px;
+}
+.gnome-box {
+  margin: 0 auto;
+  width: 800px;
+  margin-top: 50px;
+  margin-bottom: 35px;
+}
+
 #mushroom {
   margin-left: 75px;
   margin-bottom: 20px;
