@@ -32,6 +32,10 @@
   -webkit-box-shadow: 0 1px black;
 }
 
+.flash_success {
+  background-color: green;
+}
+
 .gnome-image {
   height: 100px;
   width: 100px;
