@@ -7,6 +7,13 @@ RSpec.describe OrderGnome, type: :model do
   end
 
   it 'should return subtotal' do
-    pending 
+    gnome_price = 5.95
+    quantity = 2
+    gnome = create(:gnome, :price => gnome_price)
+    order_gnome = OrderGnome.create(:gnome_id => gnome.id,
+                                    :quantity => quantity)
+    expected_result = (gnome_price * quantity)
+    
+    expect(order_gnome.subtotal).to eq(expected_result)
   end
 end

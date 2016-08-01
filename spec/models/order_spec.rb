@@ -18,11 +18,14 @@ RSpec.describe Order, type: :model do
   end
 
   it 'should return the order total' do
-    pending
-    order = Order.create
-    gnome = create(:gnome)
-    order_gnomes = OrderGnome.new(gnome_id: gnome.id, order_id: order.id, quantity: 60, subtotal: gnome.price)
+    order = create(:order)
+    gnome_price = 10.99
+    gnome_quantity = 60
+    gnome = create(:gnome, :price => gnome_price)
+    order_gnomes = order.order_gnomes.create(gnome_id: gnome.id,
+                                             quantity: gnome_quantity)
+    expected_result = (gnome_price * gnome_quantity)
 
-    expect().to eq(gnome.price * order_gnomes.quantity)
+    expect(order.total).to eq(expected_result)
   end
 end
