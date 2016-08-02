@@ -1,0 +1,13 @@
+.row.small-up-2.med-up-3.large-up-4.gnome-box
+  .column#gnome-image
+    = image_tag @gnome.image
+    .caption
+      %h5.gnome-data= @gnome.name
+  .gnome-details
+    %p= @gnome.desc
+    %h5#price.gnome-data $#{@gnome.price}
+    - if @gnome.retired?
+      %p Item retired
+    - else
+      = link_to "Create another gnome", admin_gnome_new_path
+      = link_to "Go to dashboard", admin_dashboard_path
