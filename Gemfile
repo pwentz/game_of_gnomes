@@ -31,6 +31,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'foundation-rails'
 # Use Unicorn as the app server
 gem 'unicorn'
+gem "paperclip", "~> 5.0.0"
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

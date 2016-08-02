@@ -1,0 +1,16 @@
+= form_for(@gnome, url: admin_gnome_create_path) do |t|
+  = t.label :name
+  = t.text_field :name
+
+  = t.label :desc
+  = t.text_field :desc
+
+  = t.label :price
+  = t.text_field :price
+
+  = t.label :category
+  = t.text_field :category
+
+  = t.file_field :image
+
+  = t.submit "Create item"
