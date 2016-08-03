@@ -39,7 +39,6 @@ RSpec.describe User, type: :model do
     user = User.create(:username => 'Alan', :password => 'password')
     user_two = User.create(:username => 'Alan', :password => 'password')
 
-    expect(user.id).not_to eq(nil)
     expect(user_two.id).to eq(nil)
   end
 

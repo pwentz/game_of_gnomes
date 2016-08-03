@@ -1,1 +1,12 @@
 = render partial: 'shared/dashboard'
+
+%h1= @user.username
+%p
+  Account Status:
+  - if @user.verified?
+    Verified
+  - else
+    Not Verified
+  - if !@user.verified?
+    %p
+      = link_to "Verify your account now.", verify_path
