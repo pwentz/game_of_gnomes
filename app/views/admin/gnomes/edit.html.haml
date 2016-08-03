@@ -1,5 +1,5 @@
 .wrap
-  = form_for(@gnome, url: admin_gnomes_path) do |t|
+  = form_for(@gnome, url: admin_gnome_path) do |t|
     = t.label :name
     = t.text_field :name
 
@@ -14,4 +14,4 @@
 
     = t.file_field :image
 
-    = t.submit "Create item"
+    = t.submit "Update item"

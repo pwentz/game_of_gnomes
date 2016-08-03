@@ -13,6 +13,7 @@ describe "Admin views dashboard", :type => :feature do
     click_on "Login"
 
     expect(current_path).to eq(admin_dashboard_path)
+    
     within(".main") do
       expect(page).to have_content("Admin Dashboard")
     end
