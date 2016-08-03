@@ -1,7 +1,10 @@
 FactoryGirl.define do
   factory :user do
     username { Faker::Internet.user_name }
-    password "MyString"
+    password "password"
+    phone_number { Faker::PhoneNumber.cell_phone }
+    email { Faker::Internet.email }
+    country_code "1"
   end
 
   factory :gnome do
@@ -21,5 +24,4 @@ FactoryGirl.define do
     user
     status 0
   end
-
 end

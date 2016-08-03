@@ -33,8 +33,6 @@ describe 'Visitor cart items can persist into login' do
       click_link 'View bucket'
     end
 
-    expect(page).to have_button("Checkout")
-
     expect(page).to have_link(gnome_one.name)
 
     expect(page).to have_link(gnome_two.name)
