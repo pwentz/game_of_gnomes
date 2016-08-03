@@ -1,4 +1,5 @@
 class Admin::UsersController < Admin::BaseController
   def show
-  end 
+    @gnomes = Gnome.all
+  end
 end

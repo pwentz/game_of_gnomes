@@ -25,8 +25,8 @@ Rails.application.routes.draw do
 
   namespace :admin do
     get '/dashboard', to: 'users#show'
-    get '/gnome/new', to: 'gnomes#new'
-    get '/gnome/show', to: 'gnomes#show'
-    post '/gnome/create', to: 'gnomes#create'
+
+    resources :gnomes, except: [:destroy]
+
   end
 end

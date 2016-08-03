@@ -39,9 +39,13 @@
             <li>
               <% if current_user %>
                 <li>
-                  <a><i class="foundicon-thumbnails"></i><%= current_user.username %></a>
+                  <a><%= current_user.username %></a>
                   <ul class="menu">
-                    <!-- <li><a href="#">Dashboard</a></li> -->
+                    <li>
+                      <% if current_admin? %>
+                        <%= link_to "Dashboard", admin_dashboard_path %>
+                      <% end %>
+                    </li>
                     <li><%= link_to "Logout", logout_path, method: :delete %></li>
                   </ul>
                 </li>

@@ -12,7 +12,7 @@ class Admin::GnomesController < Admin::BaseController
 
       if @category.save
         flash[:success] = "Item successfully created"
-        redirect_to admin_gnome_show_path(@gnome)
+        redirect_to admin_gnome_path(@gnome)
       else
         flash[:error] = "Invalid entry"
         render :new
@@ -20,7 +20,21 @@ class Admin::GnomesController < Admin::BaseController
   end
 
   def show
-    @gnome = Gnome.find(params[:format])
+    @gnome = Gnome.find(params[:id])
+  end
+
+  def edit
+    @gnome = Gnome.find(params[:id])
+    @category = @gnome.category
+  end
+
+  def update
+    @gnome = Gnome.find(params[:id])
+    @gnome.update_attributes(gnome_params)
+    @category = Category.find_or_create_by(name: params[:gnome][:category])
+    @category.gnomes << @gnome
+
+    redirect_to admin_gnome_path(@gnome)
   end
 
   private
