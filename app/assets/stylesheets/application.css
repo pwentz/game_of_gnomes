@@ -147,6 +147,16 @@
   max-width: 1100px;
 }
 
+.wrap-button {
+  text-align: center;
+  margin: auto;
+  padding: 25px;
+}
+
+.bottom-margin {
+  padding: 100px;
+}
+
 footer {
   background-color: #222;
   padding: 80px 0px;
