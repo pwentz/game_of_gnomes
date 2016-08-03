@@ -4,8 +4,8 @@ class OrdersController < ApplicationController
 
   def create
     @order = current_user.orders.create
-    @order.add_contents(session[:bucket])
-    flash[:notice] = "Order was successfully placed."
+    OrderGnomeSynthesizer.generate_order_gnomes(session.to_hash)
+    flash[:success] = "Order was successfully placed."
     redirect_to orders_path
   end
 

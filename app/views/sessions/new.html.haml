@@ -4,7 +4,7 @@
       .panel.panel-default
         .panel-heading
           .row-fluid.user-row
-            %img.img-responsive#mushroom{:alt => "Gnome", :src => "https://pixabay.com/static/uploads/photo/2014/04/02/10/47/red-304538_960_720.png"}/
+            %img.img-responsive#mushroom{:alt => "Gnome", :src => "images/mushroom.png"}/
         .panel-body
         %fieldset.login-form
           %label.panel-login
@@ -13,7 +13,7 @@
             = form_for :session, url: login_path do |f|
               = f.text_field :username, :class => "form-control", :placeholder => "Username"
               = f.password_field :password, :class => "form-control", :placeholder => "Password"
-              = f.submit "Login"
+              = f.submit "Login", class: 'button success'
               %br/
               %hr
-              = link_to "Create New Account", new_user_path, :class => "create_account btn btn-lg btn-success btn-block", :id => "create_account"
+              = link_to "Create New Account", new_user_path, :id => "create_account"

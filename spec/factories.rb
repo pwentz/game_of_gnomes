@@ -24,4 +24,10 @@ FactoryGirl.define do
     user
     status 0
   end
+
+  factory :order_gnome do
+    gnome
+    order
+    quantity 1
+  end
 end

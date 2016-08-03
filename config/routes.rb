@@ -7,12 +7,12 @@ Rails.application.routes.draw do
 
   resources :gnomes, only: [:index, :show]
 
-  resources :categories, only: [:show]
   resources :bucket_gnomes, only: [:create, :update, :destroy]
 
   resources :users, only: [:new, :show, :create]
 
   resources :orders, only: [:index, :create, :show]
+
 
   get '/bucket' => "bucket#show"
   put '/bucket' => "bucket#update"
@@ -29,4 +29,6 @@ Rails.application.routes.draw do
     resources :gnomes, except: [:destroy]
 
   end
+
+  get '/:id' => 'categories#show'
 end

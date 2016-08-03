@@ -1,14 +1,14 @@
-= render partial: 'shared/dashboard'
-
-%h1.banner{:style => "font-family: fantasy; margin: auto; margin-top: 10px; padding: 80px; text-align: center"}= @user.username
-%p.status{:style => "font-family: fantasy; margin: auto; margin-top: 10px; padding: 100; text-align: center"}
+%h5.user-greeting= current_user.username
+%p.greeting
   Account Status:
-  - if @user.verified?
+  - if current_user.verified?
     Verified
   - else
     Not Verified
-  - if !@user.verified?
+  - if !current_user.verified?
     %p
       = link_to "Verify your account now.", verify_path
 %div.wrap-button
   %h3= link_to "Buy some gnomes!", gnomes_path, class: "button success hollow button"
+
+= render partial: 'shared/dashboard'

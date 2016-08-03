@@ -5,9 +5,9 @@ RSpec.feature "Visitor sees category gnomes", type: :feature do
     category = create(:category)
     gnome = create(:gnome, :category => category)
 
-    visit category_path(category)
+    visit "/#{category.to_param}"
     expect(page).to have_content(gnome.name)
-    expect(current_path).to eq("/categories/#{category.name.parameterize}")
+    expect(current_path).to eq("/#{category.name.parameterize}")
   end
 
   scenario "in the category show page, but not gnomes created without category" do
@@ -15,7 +15,7 @@ RSpec.feature "Visitor sees category gnomes", type: :feature do
     gnome = create(:gnome, :category => category)
     create(:gnome, name: "Gnome Chompski")
 
-    visit category_path(category)
+    visit "/#{category.to_param}"
     expect(page).not_to have_content("Gnome Chompski")
   end
 end

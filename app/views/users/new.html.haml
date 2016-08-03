@@ -1,4 +1,4 @@
-%h5 Welcome
+%h5.greeting Welcome!
 
 .container
   .row.vertical-offset-100
@@ -6,7 +6,7 @@
       .panel.panel-default
         .panel-heading
           .row-fluid.user-row
-            %img.img-responsive#mushroom{:alt => "Gnome", :src => "https://pixabay.com/static/uploads/photo/2014/04/02/10/47/red-304538_960_720.png"}/
+            %img.img-responsive#mushroom{:alt => "Gnome", :src => "../images/mushroom.png"}/
         .panel-body
         %fieldset.login-form
           %label.panel-login
@@ -19,4 +19,4 @@
               = f.text_field :country_code, :class => "form-control", :placeholder => "Country code", id: "authy-countries"
               = f.text_field :phone_number, :class => "form-control", :placeholder => "Phone number", id: "authy-cellphone"
               %br/
-              = f.submit "Create Account", :class => "btn btn-success btn-lg btn-block"
+              = f.submit "Create Account", :class => "button success"
