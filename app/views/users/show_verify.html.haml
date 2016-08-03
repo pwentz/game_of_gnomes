@@ -1,0 +1,15 @@
+%h3.banner{:style => "font-family: fantasy; margin: auto; margin-left: 100px; margin-top: 50px;"} Just To Be Safe...
+%p.wrap
+  Your account has been created, but we need to make sure you're a human
+  in control of the phone number you gave us. Can you please enter the
+  verification code we just sent to your phone?
+.wrap.wrap-button{:style => "padding-top: 25px"}
+  = form_tag users_verify_path do
+    = label_tag :code, "Verification Code:"
+    = text_field_tag :token, '', class: "form-control"
+    %button.success.hollow.button{:type => "submit"} Verify Token
+%div.wrap-button
+  %hr/
+  = form_tag users_resend_path do
+    %button.alert.hollow.button{:type => "submit"} Resend code
+%div.bottom-margin

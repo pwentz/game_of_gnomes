@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get "users/verify", to: 'users#show_verify', as: 'verify'
+  post "users/verify"
+  post "users/resend"
+
   get '/', to: 'gnomes#index'
 
   resources :gnomes, only: [:index, :show]
