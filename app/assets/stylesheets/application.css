@@ -209,3 +209,12 @@ li a {
   color: white;
   margin-top: 80px;
 }
+
+.admin-page-wrap {
+  margin: 0px;
+  padding: 40px;
+}
+
+footer {
+  padding: 50px;
+}
