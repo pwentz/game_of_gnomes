@@ -5,9 +5,9 @@
     Verified
   - else
     Not Verified
-  - if !current_user.verified?
     %p
       = link_to "Verify your account now.", verify_path
+
 %div.wrap-button
   %h3= link_to "Buy some gnomes!", gnomes_path, class: "button success hollow button"
 

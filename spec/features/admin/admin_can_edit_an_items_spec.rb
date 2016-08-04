@@ -22,7 +22,7 @@ RSpec.feature "AdminCanEditAnItems", type: :feature do
 
       fill_in "Price", with: "100"
 
-      click_on "Update item"
+      click_on "Update Gnome"
 
       expect(page).to have_content("$100")
   end

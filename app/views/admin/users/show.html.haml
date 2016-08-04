@@ -1,7 +1,11 @@
-%h5.greeting Admin Dashboard
+%h5.user-greeting=current_user.username
+%h6.user-greeting Admin Dashboard
 .add-item-link
-  = link_to "Add item", new_admin_gnome_path, class: 'add-item-link button success hollow'
-- @gnomes.each do |gnome|
-  = link_to gnome.name, edit_admin_gnome_path(gnome)
-  %br
+  .admin-page-wrap
+    = link_to "Add Gnome", new_admin_gnome_path, class: 'add-item-link button success hollow'
+    %br/
+    %h4.user-greeting Edit Gnomes
+    - @gnomes.each do |gnome|
+      = link_to gnome.name, edit_admin_gnome_path(gnome)
+      %br
 = render partial: 'shared/dashboard'

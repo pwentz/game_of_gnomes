@@ -23,4 +23,8 @@ class Bucket
   def empty?
     contents.empty?
   end
+
+  def total_quantity
+    contents.values.sum
+  end
 end
