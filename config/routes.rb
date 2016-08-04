@@ -31,4 +31,5 @@ Rails.application.routes.draw do
   end
 
   get '/:id' => 'categories#show'
+  get "*any", via: :all, to: "errors#not_found"
 end
