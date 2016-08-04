@@ -46,6 +46,4 @@ $(document).ready(function(){
   $('#bucket-link').on('mouseleave', function(){
     $('#bucket-link').find('.label').fadeOut(200);
   });
-
-
 });
