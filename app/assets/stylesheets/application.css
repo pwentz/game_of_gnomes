@@ -24,21 +24,48 @@
    background-repeat: no-repeat !important;
    background-position: top center !important;
 }
-
 .navbar {
   background-color: white;
+  transition: all 1.0s ease;
   box-shadow: 0 1px black;
   -moz-box-shadow: 0 1px black;
   -webkit-box-shadow: 0 1px black;
+  width: 100%;
 }
 
-.flash_success {
-  background-color: green;
+.greeting {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.order-information {
+  margin: 0 auto;
+  width: 350px;
+  text-align: center;
+  margin-top: 25px;
+}
+
+.order-table {
+  margin: 0 auto;
+  width: 1000px;
+}
+
+.order-info {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.table {
+  margin-bottom: 45px;
+  margin-top: 15px;
 }
 
 .gnome-image {
   height: 100px;
-  width: 100px;
+  width: 75px;
+}
+.checkout-button {
+  margin-bottom: 25px;
 }
 
 .thumbnail {
@@ -106,6 +133,14 @@
   height: 180px;
   width: 180px;
   margin: auto;
+}
+
+.user-greeting {
+  font-family: fantasy;
+  margin: auto;
+  margin-top: 10px;
+  padding: 100;
+  text-align: center;
 }
 
 .gnome-details {
@@ -182,11 +217,38 @@ footer h4 {
 
 .top-bar-right {
   padding: 5px;
+  height: 75px;
 }
 
 .top-bar-left {
   padding: 5px;
   top-padding: 15px;
+  height: 75px;
+}
+
+.minify {
+  padding: 5px;
+  background-color: maroon;
+  line-height: 48px;
+  height: 48px;
+}
+
+.minify .dropdown {
+  padding-top: 0;
+  color: maroon;
+  background-color: maroon;
+  line-height: 40px;
+  height: 40px;
+}
+.minify li {
+  background-color: maroon;
+  text-align: center;
+}
+
+.minify li a {
+  color: white;
+  background-color: maroon;
+  font-size: 16px;
 }
 
 .menu-text {
@@ -203,9 +265,67 @@ li a {
   font-size: 20px;
 }
 
+.sticky {
+  position: fixed;
+  top: 0;
+  line-height: 48px;
+  height: 48px;
+  background-color: maroon;
+}
 .homepage-text {
   font-family: fantasy;
   font-size: 40px;
   color: white;
   margin-top: 80px;
+}
+
+#error {
+}
+
+.gnomes-error {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.horror_gnomes {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.flash_success {
+  background-color: green;
+  text-align: center;
+}
+
+.flash_danger {
+  background-color: maroon;
+  text-align: center;
+}
+
+#more-button {
+  display: none;
+}
+
+#gnome-banner {
+  font-family: fantasy;
+  margin: auto;
+  margin-top: 10px;
+}
+.bucket-header {
+  width: 300px;
+}
+
+#total-price {
+  width: 400px;
+}
+
+.add-item-link {
+  margin: 0 auto;
+  text-align: center;
+  margin-bottom: 35px;
+  margin-top: 25px;
+}
+.order-header {
+  text-align: left;
 }

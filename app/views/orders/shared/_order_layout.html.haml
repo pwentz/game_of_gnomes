@@ -1,0 +1,14 @@
+.container.order-table
+  %table.table.table-default
+    %tr
+      %th.order-header Gnomes
+      %th.order-header Quantity
+      %th.order-header Subtotal
+    - target.order_gnomes.each do |order_gnome|
+      %tr
+        %td= link_to "#{order_gnome.gnome.name}", gnome_path(order_gnome.gnome)
+        %td= order_gnome.quantity
+        %td $#{order_gnome.subtotal}
+    %tr
+      %td{:colspan => "2"} Total
+      %td $#{target.total}

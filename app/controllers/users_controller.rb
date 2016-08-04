@@ -6,7 +6,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = current_user
+    @top_three_orders = current_user.orders.first(3) unless current_user.orders.empty?
   end
 
   def create

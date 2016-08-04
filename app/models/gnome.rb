@@ -14,7 +14,7 @@ class Gnome < ActiveRecord::Base
   validates :category_id, :presence => true
 
   has_attached_file :image, styles: { medium: "300x300>", thumb: "100x100>" },
-  default_url: "https://pixabay.com/static/uploads/photo/2014/12/21/23/58/gnome-576496_960_720.png"
+  default_url: "images/gnome.png"
 
 
   enum role: %w(default retired)

@@ -1,8 +1,8 @@
 class BucketGnome < SimpleDelegator
   attr_reader :quantity, :gnome, :gnome_key
   
-  def initialize(gnome, quantity=nil)
-    @gnome = Gnome.find(gnome)
+  def initialize(gnome_id, quantity=nil)
+    @gnome = Gnome.find(gnome_id)
     @quantity = quantity
     @gnome_key = @gnome.id.to_s
     super(@gnome)
