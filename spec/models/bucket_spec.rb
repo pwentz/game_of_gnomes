@@ -20,7 +20,7 @@ describe Bucket, :type => :model do
     ).to be_instance_of(BucketGnome)
   end
 
-  it 'calculates total' do
+  it 'calculates total price' do
     gnome_one,
      gnome_two = create_list(:gnome, 2)
     bucket = Bucket.new(gnome_one.id => 1,
@@ -28,5 +28,14 @@ describe Bucket, :type => :model do
     expected_result = gnome_one.price + gnome_two.price
 
     expect(bucket.total).to eq(expected_result)
+  end
+
+  it 'calculates total quantity' do
+    gnome_one,
+      gnome_two = create_list(:gnome, 2)
+    bucket_contents = {gnome_one.id => 3, gnome_two.id => 2}
+    bucket = Bucket.new(bucket_contents)
+
+    expect(bucket.total_quantity).to eq(5)
   end
 end

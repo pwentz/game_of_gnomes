@@ -7,6 +7,6 @@ describe "Authenticated user cannot view other user or admin data", :type => :fe
 
     visit admin_dashboard_path
 
-    expect(page).to have_content("The page you were looking for doesn't exist.")
+    expect(page).to have_content("You've stumbled into a restricted area, go back now!")
   end
 end

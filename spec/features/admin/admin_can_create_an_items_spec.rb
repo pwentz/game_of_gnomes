@@ -8,7 +8,7 @@ RSpec.feature "AdminCanCreateAnItems", type: :feature do
 
     visit admin_dashboard_path
 
-    click_on "Add item"
+    click_on "Add Gnome"
 
     fill_in "Name", with: "Pickle-hero"
     fill_in "Desc", with: "A small one"
@@ -16,7 +16,7 @@ RSpec.feature "AdminCanCreateAnItems", type: :feature do
 
     find('#gnome_category').find(:xpath, '//*[@id="gnome_category"]/option').select_option
 
-    click_on "Create item"
+    click_on "Create Gnome"
 
     expect(page).to have_content("Pickle-hero")
     expect(page).to have_content("A small one")
@@ -29,7 +29,7 @@ RSpec.feature "AdminCanCreateAnItems", type: :feature do
 
     visit admin_dashboard_path
 
-    click_on "Add item"
+    click_on "Add Gnome"
 
     fill_in "Name", with: ""
     fill_in "Desc", with: "something"
@@ -37,7 +37,7 @@ RSpec.feature "AdminCanCreateAnItems", type: :feature do
 
     find('#gnome_category').find(:xpath, '//*[@id="gnome_category"]/option').select_option
 
-    click_on "Create item"
+    click_on "Create Gnome"
 
     expect(page).to have_content("Invalid entry")
   end
@@ -47,7 +47,7 @@ RSpec.feature "AdminCanCreateAnItems", type: :feature do
 
     visit admin_dashboard_path
 
-    click_on "Add item"
+    click_on "Add Gnome"
 
     fill_in "Name", with: "Pickle-hero"
     fill_in "Desc", with: ""
@@ -55,7 +55,7 @@ RSpec.feature "AdminCanCreateAnItems", type: :feature do
 
     find('#gnome_category').find(:xpath, '//*[@id="gnome_category"]/option').select_option
 
-    click_on "Create item"
+    click_on "Create Gnome"
 
     expect(page).to have_content("Invalid entry")
   end
@@ -65,7 +65,7 @@ RSpec.feature "AdminCanCreateAnItems", type: :feature do
 
     visit admin_dashboard_path
 
-    click_on "Add item"
+    click_on "Add Gnome"
 
     fill_in "Name", with: "expensive"
     fill_in "Desc", with: "something"
@@ -73,7 +73,7 @@ RSpec.feature "AdminCanCreateAnItems", type: :feature do
 
     find('#gnome_category').find(:xpath, '//*[@id="gnome_category"]/option').select_option
 
-    click_on "Create item"
+    click_on "Create Gnome"
 
     expect(page).to have_content("Invalid entry")
   end
@@ -83,7 +83,7 @@ RSpec.feature "AdminCanCreateAnItems", type: :feature do
 
     visit admin_dashboard_path
 
-    click_on "Add item"
+    click_on "Add Gnome"
 
     fill_in "Name", with: "expensive"
     fill_in "Desc", with: "something"
@@ -91,7 +91,7 @@ RSpec.feature "AdminCanCreateAnItems", type: :feature do
 
     find('#gnome_category').find(:xpath, '//*[@id="gnome_category"]/option').select_option
 
-    click_on "Create item"
+    click_on "Create Gnome"
 
     expect(page).to have_content("Invalid entry")
   end
@@ -102,7 +102,7 @@ RSpec.feature "AdminCanCreateAnItems", type: :feature do
 
     visit admin_dashboard_path
 
-    click_on "Add item"
+    click_on "Add Gnome"
 
     fill_in "Name", with: "#{gnome.name}"
     fill_in "Desc", with: "#{gnome.desc}"
@@ -110,7 +110,7 @@ RSpec.feature "AdminCanCreateAnItems", type: :feature do
 
     find('#gnome_category').find(:xpath, '//*[@id="gnome_category"]/option[1]').select_option
 
-    click_on "Create item"
+    click_on "Create Gnome"
 
     expect(page).to have_content("Invalid entry")
   end

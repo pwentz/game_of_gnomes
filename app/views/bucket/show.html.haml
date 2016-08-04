@@ -48,7 +48,7 @@
     = button_to 'Checkout', orders_path, class: 'checkout-button button success hollow'
   -elsif current_user && @bucket.empty?
     %p Your bucket is empty!
-    = link_to "Get some gnomes!", gnomes_path
+    = link_to "Get some gnomes!", gnomes_path, class: 'button alert'
   - else
     %p
       = link_to 'Login', login_path

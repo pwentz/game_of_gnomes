@@ -1,0 +1,17 @@
+.admin-page-wrap
+  = form_for [:admin, @gnome] do |t|
+    = t.label :name
+    = t.text_field :name
+
+    = t.label :desc
+    = t.text_field :desc
+
+    = t.label :price
+    = t.text_field :price
+
+    = t.label :category
+    = t.select :category, @categories.map {|p| p.name }
+
+    = t.file_field :image
+
+    = t.submit

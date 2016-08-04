@@ -32,7 +32,14 @@
   -webkit-box-shadow: 0 1px black;
   width: 100%;
 }
+.label {
+  display: none;
+  background-color: #86b300;
+  color: white;
+}
+#bucket-link {
 
+}
 .greeting {
   text-align: center;
   margin-top: 15px;
@@ -80,6 +87,9 @@
 }
 .buttons {
   text-align: center;
+}
+.radius {
+  margin-top: 20px;
 }
 
 .panel {
@@ -205,6 +215,15 @@ footer h4 {
   color: white;
 }
 
+.admin-page-wrap {
+  margin: 0px;
+  padding: 40px;
+}
+
+footer {
+  padding: 50px;
+}
+
 .top-bar {
   padding: 0;
   border-color: red;
@@ -280,27 +299,50 @@ li a {
 }
 
 #error {
+  margin-top: 50px;
 }
 
 .gnomes-error {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
 
 .horror_gnomes {
   margin-left: auto;
   margin-right: auto;
+  width: 750px;
 }
 
 .flash_success {
-  background-color: green;
+  background-color: #43AC6A;
   text-align: center;
+  color: white;
+  width: 350px;
+  margin: 0 auto;
+  padding: 5px;
+}
+.flash_success a{
+  color: maroon;
 }
 
 .flash_danger {
-  background-color: maroon;
+  background-color: #f04124;
   text-align: center;
+  color: white;
+  width: 350px;
+  margin: 0 auto;
+  padding: 5px;
+}
+.flash_notice {
+  background-color: #1892ac;
+  text-align: center;
+  color: white;
+  width: 350px;
+  margin: 0 auto;
+  padding: 5px;
 }
 
 #more-button {

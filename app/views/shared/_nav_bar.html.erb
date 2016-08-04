@@ -19,8 +19,9 @@
             <% end %>
           </ul>
         </li>
-        <li>
+        <li id="bucket-link">
           <%= link_to "View bucket", bucket_path %>
+          <span class="label"><%= @bucket.total_quantity %></span>
         </li>
         <li>
           <% if current_user %>
@@ -30,6 +31,8 @@
                 <li>
                   <% if current_admin? %>
                     <%= link_to 'Dashboard', admin_dashboard_path %>
+                  <% else %>
+                    <%= link_to 'Dashboard', dashboard_path %>
                   <% end %>
                 </li>
                 <li><%= link_to "Logout", logout_path, method: :delete %></li>

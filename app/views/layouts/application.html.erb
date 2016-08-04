@@ -16,7 +16,9 @@
 
   <section class="main">
     <% flash.each do |type, message| %>
-      <%= content_tag :div, sanitize(message), class: "flash_#{type}" %>
+      <div data-alert class="flash_<%= type %> alert-box round">
+        <%= sanitize(message) %>
+      </div>
     <% end %>
 
 

@@ -29,7 +29,7 @@ class UsersController < ApplicationController
 
        redirect_to verify_path
     else
-      flash[:notice] = "Account creation failed. Try again."
+      flash[:danger] = "Account creation failed. Try again."
       render :new
     end
   end

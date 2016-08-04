@@ -9,5 +9,8 @@
     - if @gnome.retired?
       %p Item retired
     - else
-      = link_to "Create another gnome", new_admin_gnome_path
-      = link_to "Go to dashboard", admin_dashboard_path
+      .hollow.button
+        = link_to "Create another gnome", new_admin_gnome_path
+      %br/
+      .hollow.button
+        = link_to "Go to dashboard", admin_dashboard_path
