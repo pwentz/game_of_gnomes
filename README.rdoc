@@ -21,6 +21,8 @@ As an extension we added Authy gem, by Twilio, for 2 factor authentication. When
 
 ### Introduction
 
+***
+
 #### Learning Goals
 
 * Use TDD to drive all layers of Rails development including unit and integration tests
