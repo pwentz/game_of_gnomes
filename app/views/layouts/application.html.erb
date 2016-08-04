@@ -11,88 +11,19 @@
     <%= csrf_meta_tags %>
   </head>
 
-  <body>
-    <div class="top-bar navbar">
-      <div class="wrap">
-        <div class="top-bar-left">
-          <ul class="menu">
-            <li class="menu-text">
-              <%= link_to "Game Of Gnomes", gnomes_path %>
-            </li>
-          </ul>
-        </div>
-        <div class="top-bar-right">
-          <ul class="dropdown menu" data-dropdown-menu>
-            <li>
-              <a>Categories</a>
-              <ul class="menu">
-                <% if @categories %>
-                  <% @categories.each do |category| %>
-                    <li><%= link_to "#{category.name}", category_path(category) %></li>
-                  <% end %>
-                <% end %>
-              </ul>
-            </li>
-            <li>
-              <%= link_to "View bucket", bucket_path %>
-            </li>
-            <li>
-              <% if current_user %>
-                <li>
-                  <a><%= current_user.username %></a>
-                  <ul class="menu">
-                    <li>
-                      <% if current_admin? %>
-                        <%= link_to "Dashboard", admin_dashboard_path %>
-                      <% end %>
-                    </li>
-                    <li><%= link_to "Logout", logout_path, method: :delete %></li>
-                  </ul>
-                </li>
-              <% else %>
-                <%= link_to "Login", login_path %>
-              <% end %>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
+    <body>
 
-  <section class="main">
-    <% flash.each do |type, message| %>
-      <%= content_tag :div, sanitize(message), class: "flash_#{type}" %>
-    <% end %>
+      <%= render partial: "layouts/navbar" %>
 
+        <section class="main">
+          <% flash.each do |type, message| %>
+            <%= content_tag :div, sanitize(message), class: "flash_#{type}" %>
+          <% end %>
 
-      <%= yield %>
+            <%= yield %>
 
+        </section>
 
-  </section>
-
-    <footer>
-      <div class="wrap row small-up-1 medium-up-3">
-        <div class="column">
-          <h4>Contact Info</h4>
-          <hr>
-          <a><strong>Address</strong> 1530 Blake St </a>
-          <a><strong>Contact Number</strong> 303-895-0492</a>
-          <a><strong>Email</strong> info@game_of_gnomes.com</a>
-        </div>
-        <div class="column">
-          <h4>Copyright</h4>
-          <hr>
-          <a> Copyright &copy; 2016 <strong>SpaceJams</strong></br>
-              All Rights Reserved
-          </a>
-        </div>
-        <div class="column">
-          <h4>In Case of Emergency</h4>
-          <hr>
-          <a>Police</a>
-          <a>Goblins</a>
-          <a>Jimmy Johns</a>
-        </div>
-      </div>
-    </footer>
-  </body>
+      <%= render partial: "layouts/footer" %>
+    </body>
 </html>

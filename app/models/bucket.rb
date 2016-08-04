@@ -23,4 +23,8 @@ class Bucket
   def empty?
     contents.empty?
   end
+
+  def count
+    contents.values.reduce(:+)
+  end
 end

@@ -1,9 +1,10 @@
-.wrap
+.admin-page-wrap
   %h5 Admin Dashboard
   = render partial: 'shared/dashboard'
-  = link_to "Add item", new_admin_gnome_path
-  %br
-  %br
-  - @gnomes.each do |gnome|
-    = link_to gnome.name, edit_admin_gnome_path(gnome)
+  .admin-page-wrap
+    = link_to "Add item", new_admin_gnome_path
     %br
+    %br
+    - @gnomes.each do |gnome|
+      = link_to gnome.name, edit_admin_gnome_path(gnome)
+      %br
