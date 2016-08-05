@@ -23,8 +23,8 @@ Rails.application.routes.draw do
   get '/orders/:id', to: 'orders#show', as: 'order'
 
 
-  get '/bucket' => "bucket#show", as: 'bucket'
-  put '/bucket' => "bucket#update"
+  get '/bucket', to: "bucket#show", as: 'bucket'
+  put '/bucket', to: "bucket#update"
 
   get '/login', to: 'sessions#new', as: 'login'
   post '/login', to: 'sessions#create', as: 'sessions'
@@ -41,6 +41,6 @@ Rails.application.routes.draw do
   put 'admin/gnomes/:id', to: 'admin/gnomes#update'
   patch 'admin/gnomes/:id', to: 'admin/gnomes#update'
 
-  get '/:id' => 'categories#show', as: 'category'
+  get '/:id', to: 'categories#show', as: 'category'
   get "*any", via: :all, to: "errors#not_found"
 end
