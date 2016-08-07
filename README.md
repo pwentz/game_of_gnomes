@@ -9,6 +9,8 @@
 * Yoseph Anderson
 * Kris Sparks
 
+
+Production: https://game-of-gnomes-app.herokuapp.com/
 ***
 
 In this project we'll use Ruby on Rails to build an online commerce platform to facilitate online ordering.
